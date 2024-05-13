@@ -10,13 +10,16 @@
 
 <body>
     <div id="app">
-        <h1>HeatWave</h1>
 
+        <h2>Udendørs temperatur: {{ localTemperature }}°C</h2>
+        <button>Få anbefalet temperatur</button>
+
+        <h1>Tidligere målinger</h1>
         <table>
             <thead>
                 <tr>
                     <th>Id</th>
-                    <th>Dato og tid</th>
+                    <th>Dato/tid</th>
                     <th>Indendørs temperatur</th>
                     <th>Udendørs temperatur</th>
                 </tr>
