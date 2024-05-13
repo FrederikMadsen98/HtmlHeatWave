@@ -1,25 +1,23 @@
-const baseUrl = 'https://heatwaveprojekt.azurewebsites.net/api/temp'
+const baseUrl = "https://heatwaveprojekt.azurewebsites.net/api/temp";
 
 Vue.createApp({
     data() {
         return {
-            
-            temp: null,
-            time: null
+            TempMeasurements: [],
+            error: "",
         }
     },
     created() {
-        this.getPosts()
+        this.getPosts();
     },
     methods: {
         async getPosts() {
             try {
-                const response = await axios.get(baseUrl)
-                this.posts = await response.data
+                const response = await axios.get(baseUrl);
+                this.TempMeasurements = response.data;
             } catch (error) {
-                this.error = error.message
+                this.error = error.message;
             }
+        }
     }
-    
-}
-}).mount('#app')
+}).mount('#app');

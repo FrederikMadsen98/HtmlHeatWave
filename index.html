@@ -4,28 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <title>HeatWave</title>
 </head>
 
 <body>
     <div id="app">
-    <h1>HeatWave</h1>
-    <table>
-        <thead>
-        <tr>
-            <th>ID</th>
-            <th>Dato og tid</th>
-            <th>Indendørs temperatur</th>
-            <th>Udendørs temperatur</th>
-        </tr>
-        </thead>
-        <tbody v-for="post in posts">
-            <td>{{post.id}}</td>
-            <td>{{post.date}}</td>
-            <td>{{post.inDoorTemperature}}</td>
-            <td>{{post.outDoorTemperature}}</td>
+        <h1>HeatWave</h1>
 
-    </table>
+        <button v-on:click="getPosts">get data</button>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Dato og tid</th>
+                    <th>Indendørs temperatur</th>
+                    <th>Udendørs temperatur</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="post in TempMeasurements" :key="post.id">
+                    <td>{{ post.id }}</td>
+                    <td>{{ post.date}}</td>
+                    <td>{{ post.inDoorTemperature }}</td>
+                    <td>{{ post.outDoorTemperature }}</td>
+                </tr>
+            </tbody>
+        </table>
     </div>
     <script src="index.js"></script>
 </body>
