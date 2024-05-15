@@ -59,6 +59,23 @@
             </tr>
 
         </table>
+        <div id="content">
+            <!-- Content will be updated here -->
+          </div>
+        
+          <script>
+            // Function to update content
+            function updateContent() {
+              // Perform whatever actions you want to update the content
+              document.getElementById('content').innerHTML = 'Updated content at ' + new Date();
+            }
+        
+            // Call updateContent initially
+            updateContent();
+        
+            // Refresh content every 10 minutes
+            setInterval(updateContent, 30* 1000); // 30 sec in milliseconds
+          </script>
     </div>
     </div>
     <script src="index.js"></script>
