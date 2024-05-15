@@ -1,0 +1,80 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa; /* Light gray background */
+    color: #333; /* Dark gray text color */
+    padding: 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.btn {
+    cursor: pointer;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    color: #fff;
+    background-color: #007bff; /* Blue button color */
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+.card {
+    background-color: #fff; /* White card background */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.card h2 {
+    margin-bottom: 15px;
+}
+
+.table-container {
+    overflow-x: auto; /* Allow horizontal scrolling for tables */
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.table th,
+.table td {
+    border: 1px solid #ddd; /* Light gray border */
+    padding: 10px;
+}
+
+.table th {
+    background-color: #f2f2f2; /* Light gray background for table headers */
+    font-weight: bold;
+    text-align: left;
+}
+
+.table tr:nth-child(even) {
+    background-color: #f9f9f9; /* Alternate row background color */
+}
+
+.slider {
+    width: 100%;
+}
+
+/* Responsive styling */
+@media (max-width: 600px) {
+    .container {
+        padding: 10px;
+    }
+}

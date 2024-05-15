@@ -7,6 +7,8 @@ Vue.createApp({
         return {
             TempMeasurements: [],
             error: "",
+            currentTemperature: null,
+            showTable: false
         }
     },
     created() {
@@ -21,21 +23,15 @@ Vue.createApp({
                 this.error = error.message;
             }
         },
-        async getLocalTemperature() {
-            try {
-                const response = await axios.get(openWeatherMapApiUrl);
-                this.localTemperature = response.data.main.temp;
-            } catch (error) {
-                this.error = error.message;
+        getCurrentTemp() {
+            if (this.TempMeasurements.length > 0) {
+                const lastMeasurement = this.TempMeasurements[this.TempMeasurements.length - 1];
+                this.currentTemperature = lastMeasurement;
             }
         },
-        async getLocalTemperature() {
-            try {
-                const response = await axios.get(ApiUrl);
-                this.localTemperature = response.data.main.temp;
-            } catch (error) {
-                this.error = error.message;
-            }
+        toggleTable() {
+            this.showTable = !this.showTable;
         }
-    }
-}).mount('#app');
+    },
+}
+).mount('#app');
