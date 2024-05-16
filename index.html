@@ -33,43 +33,47 @@
 <body>
     <div id="app">
         <div>
-            <div class="mt-3" v-if="currentTemperature">
-                <h3>Nuværende temperature</h3>
-                <p>Indendørs temperature: {{currentTemperature.inDoorTemperature}}°C</p>
-                <p>Udendørs temperature: {{currentTemperature.outDoorTemperature}}°C</p>
+            <div style="text-align: center;">
+                <div class="mt-3" v-if="currentTemperature">
+                    <h3>Nuværende temperature</h3>
+                    <p>Indendørs temperature: {{currentTemperature.inDoorTemperature}}°C</p>
+                    <p>Udendørs temperature: {{currentTemperature.outDoorTemperature}}°C</p>
+                </div>
             </div>
         </div>
 
-        <h3>Vis tidligere målinger</h3>
-        <button v-on:click="toggleTable">Vis tabel</button>
+        <div style="text-align: center;">
+            <h3>Vis tidligere målinger</h3>
+            <button v-on:click="toggleTable">Vis tabel</button>
 
-        <table style="width: 100%" v-if="showTable">
+            <table style="width: 100%" v-if="showTable">
 
-            <tr>
-                <th>Id</th>
-                <th>Dato/tid</th>
-                <th>Indendørs temperatur</th>
-                <th>Udendørs temperatur</th>
-            </tr>
-            <tr v-for="post in TempMeasurements" :key="post.id">
-                <td>{{ post.id }}</td>
-                <td>{{ post.date}}</td>
-                <td>{{ post.inDoorTemperature }}</td>
-                <td>{{ post.outDoorTemperature }}</td>
-            </tr>
+                <tr>
+                    <th>Id</th>
+                    <th>Dato/tid</th>
+                    <th>Indendørs temperatur</th>
+                    <th>Udendørs temperatur</th>
+                </tr>
+                <tr v-for="post in TempMeasurements" :key="post.id">
+                    <td>{{ post.id }}</td>
+                    <td>{{ post.date}}</td>
+                    <td>{{ post.inDoorTemperature }}</td>
+                    <td>{{ post.outDoorTemperature }}</td>
+                </tr>
 
-        </table>
+            </table>
 
-        <script>
-            function autoRefreshPage() {
-                // Refresher siden hvert 5 min (300000 milliseconds)
-                setInterval(function () {
-                    location.reload();
-                }, 300000);
-            }
-            // Call the function to start auto-refreshing
-            autoRefreshPage();
-        </script>
+            <script>
+                function autoRefreshPage() {
+                    // Refresher siden hvert 5 min (300000 milliseconds)
+                    setInterval(function () {
+                        location.reload();
+                    }, 300000);
+                }
+                // Call the function to start auto-refreshing
+                autoRefreshPage();
+            </script>
+        </div>
     </div>
     </div>
     <script src="index.js"></script>
