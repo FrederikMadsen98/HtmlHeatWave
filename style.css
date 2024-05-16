@@ -1,80 +1,62 @@
-* {
+/* Reset default browser styles */
+body, h1, p {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
+/* Set background color and font styles */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f8f9fa; /* Light gray background */
-    color: #333; /* Dark gray text color */
-    padding: 20px;
+    background-color: #f2f2f2;
+    font-family: monospace;
 }
 
-.container {
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.btn {
-    cursor: pointer;
-    padding: 10px 20px;
-    border-radius: 5px;
-    border: none;
-    color: #fff;
-    background-color: #007bff; /* Blue button color */
-    transition: background-color 0.3s ease;
-}
-
-.btn:hover {
-    background-color: #0056b3; /* Darker blue on hover */
-}
-
-.card {
-    background-color: #fff; /* White card background */
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
-    padding: 20px;
+/* Style the heading */
+h3 {
+    color: #000000;
+    font-family: monospace;
+    font-size: 24px;
+    font-weight: bold;
     margin-bottom: 20px;
 }
 
-.card h2 {
-    margin-bottom: 15px;
+/* Style the paragraph */
+p {
+    color: #000000;
+    font-family: monospace;
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 10px;
 }
 
-.table-container {
-    overflow-x: auto; /* Allow horizontal scrolling for tables */
+/* Style the table */
+table {
+    width: 100%; /* Make table take up the full width */
+    border-collapse: collapse; /* Collapse borders */
+    font-family: monospace;
 }
 
-.table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
+/* Style the table header */
+th {
+    background-color: #f2f2f2; /* Light grey background */
+    color: black; /* Black text color */
+    font-family: monospace;
+    text-align: left; /* Left-aligned text */
+    padding: 8px; /* Padding around text */
 }
 
-.table th,
-.table td {
-    border: 1px solid #ddd; /* Light gray border */
-    padding: 10px;
+/* Style the table cells */
+td {
+    border: 1px solid #ddd; /* Light grey border */
+    font-family: monospace;
+    padding: 8px; /* Padding around text */
 }
 
-.table th {
-    background-color: #f2f2f2; /* Light gray background for table headers */
-    font-weight: bold;
-    text-align: left;
-}
+/* Add a hover effect to table rows */
+tr:hover {background-color: #8d8c8a;}
 
-.table tr:nth-child(even) {
-    background-color: #f9f9f9; /* Alternate row background color */
-}
-
-.slider {
-    width: 100%;
-}
-
-/* Responsive styling */
-@media (max-width: 600px) {
-    .container {
-        padding: 10px;
-    }
+/* Add some padding and border to a container */
+.container {
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
