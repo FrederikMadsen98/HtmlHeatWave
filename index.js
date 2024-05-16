@@ -19,6 +19,7 @@ Vue.createApp({
             try {
                 const response = await axios.get(baseUrl);
                 this.TempMeasurements = response.data;
+                this.getCurrentTemp();
             } catch (error) {
                 this.error = error.message;
             }
