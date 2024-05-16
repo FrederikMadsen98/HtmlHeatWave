@@ -30,6 +30,7 @@ p {
 
 /* Style the button */
 button {
+    border-radius: 8px; /* Rounded corners */
     background-color: #4CAF50; /* Green background */
     border: none; /* No border */
     color: white; /* White text */
@@ -44,6 +45,7 @@ button {
 }
 
 .fullscreenButton {
+    border-radius: 8px; /* Rounded corners */
     position: fixed;
     right: 0;
     top: 0;
