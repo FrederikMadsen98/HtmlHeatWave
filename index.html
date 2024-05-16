@@ -70,6 +70,23 @@
                 // Call the function to start auto-refreshing
                 autoRefreshPage();
             </script>
+
+            <button onclick="openFullscreen();">Go Fullscreen</button>
+
+            <script>
+                function openFullscreen() {
+                    if (document.documentElement.requestFullscreen) {
+                        document.documentElement.requestFullscreen();
+                    } else if (document.documentElement.mozRequestFullScreen) { /* Firefox */
+                        document.documentElement.mozRequestFullScreen();
+                    } else if (document.documentElement.webkitRequestFullscreen) { /* Chrome, Safari and Opera */
+                        document.documentElement.webkitRequestFullscreen();
+                    } else if (document.documentElement.msRequestFullscreen) { /* IE/Edge */
+                        document.documentElement.msRequestFullscreen();
+                    }
+                }
+            </script>
+
         </div>
     </div>
     </div>
