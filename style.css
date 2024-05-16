@@ -28,6 +28,26 @@ p {
     margin-bottom: 10px;
 }
 
+/* Style the button */
+button {
+    background-color: #4CAF50; /* Green background */
+    border: none; /* No border */
+    color: white; /* White text */
+    padding: 15px 32px; /* Padding around text */
+    text-align: center; /* Center-aligned text */
+    text-decoration: none; /* No underline */
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer; /* Change cursor to pointer when hovering over the button */
+    transition-duration: 0.4s; /* Transition effect when hovering over the button */
+}
+
+/* Change the background color when hovering over the button */
+button:hover {
+    background-color: #45a049;
+}
+
 /* Style the table */
 table {
     width: 100%; /* Make table take up the full width */
