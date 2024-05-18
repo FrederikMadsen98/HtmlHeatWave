@@ -1,6 +1,4 @@
 const baseUrl = "https://heatwaveprojekt.azurewebsites.net/api/temp";
-const ApiUrl = "http://api.weatherapi.com/v1/current.json";
-const ApiKey = "29501236f4854c099e1104709240405";
 
 Vue.createApp({
     data() {
@@ -14,6 +12,28 @@ Vue.createApp({
     created() {
         this.getPosts();
     },
+
+    computed: {
+        recommendedIndoorTemperature() {
+            if (this.currentTemperature && this.currentTemperature.outDoorTemperature !== null) {
+                if (this.currentTemperature.outDoorTemperature >= 15 && this.currentTemperature.outDoorTemperature <= 20) {
+                    return 20;
+                } else if (this.currentTemperature.outDoorTemperature >= 10 && this.currentTemperature.outDoorTemperature <= 14) {
+                    return 25;
+                } else if (this.currentTemperature.outDoorTemperature >= 5 && this.currentTemperature.outDoorTemperature <= 9) {
+                    return 25;
+                } else if (this.currentTemperature.outDoorTemperature >= -11 && this.currentTemperature.outDoorTemperature <= 4) {
+                    return 25;
+                } else if (this.currentTemperature.outDoorTemperature >= 21 && this.currentTemperature.outDoorTemperature <= 30) {
+                    return 20;
+                } else {
+                    return "Ingen specifik anbefaling";
+                }
+            }
+            return "Ingen specifik anbefaling";
+        }
+    },
+
     methods: {
         async getPosts() {
             try {
