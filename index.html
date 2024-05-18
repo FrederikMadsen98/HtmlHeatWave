@@ -23,10 +23,15 @@
             padding: 10px;
             text-align: center;
         }
+
+        body {
+            background-color: hwb(38 60% 4%);
+            font-family: monospace;
+        }
     </style>
 </head>
 
-<body>
+<body class="body">
     <div id="app">
         <div>
             <div style="text-align: center;">
@@ -35,6 +40,12 @@
                     <div style="display: flex; justify-content: center; gap: 20px;">
                         <p>Indendørs temperature: {{currentTemperature.inDoorTemperature}}°C</p>
                         <p>Udendørs temperature: {{currentTemperature.outDoorTemperature}}°C</p>
+                    </div>
+                    <div>
+                        <p>Anbefalet temperatur</p>
+                    </div>
+                    <div class="slidecontainer">
+                        <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
                     </div>
                 </div>
             </div>
@@ -62,12 +73,12 @@
 
             <script>
                 function autoRefreshPage() {
-                    // Refresher siden hvert 5 min (300000 milliseconds)
+                    // Refresher siden hvert 5 min (300000 millisekunder)
                     setInterval(function () {
                         location.reload();
                     }, 300000);
                 }
-                // Call the function to start auto-refreshing
+                // Kalder funktionen til at refreshe siden automatisk
                 autoRefreshPage();
             </script>
 
