@@ -7,11 +7,11 @@ p {
 }
 
 /* Set background color and font styles */
-body {
-    background-color: #f6c37c;
+/* body {
+    background-color: #832323;
     font-family: monospace;
     color: #2f64d8;
-}
+} */
 
 /* Style the heading */
 h3 {
@@ -105,7 +105,7 @@ tr:hover {
     appearance: none;
     width: 70%;
     height: 25px;
-    background: #fcfcfc;
+    background: #636262;
     outline: none;
     opacity: 0.7;
     -webkit-transition: .2s;
@@ -123,7 +123,7 @@ tr:hover {
     appearance: none;
     width: 25px;
     height: 25px;
-    background: #15036e;
+    background: hsl(0, 0%, 100%);
     cursor: pointer;
     border-radius: 50%;
 }
