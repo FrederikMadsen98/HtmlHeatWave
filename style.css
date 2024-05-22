@@ -1,22 +1,12 @@
-/* Reset default browser styles */
-body,
-h1,
-p {
+body, h1, p {
     margin: 0;
     padding: 0;
 }
 
-/* Set background color and font styles */
-/* body {
-    background-color: #832323;
-    font-family: monospace;
-    color: #2f64d8;
-} */
-
 /* Style the heading */
 h3 {
     color: #2f64d8;
-    font-family: monospace;
+    font-family: 'Courier New', monospace;
     font-size: 24px;
     font-weight: bold;
     margin-bottom: 20px;
@@ -25,97 +15,101 @@ h3 {
 /* Style the paragraph */
 p {
     color: #2f64d8;
-    font-family: monospace;
+    font-family: 'Courier New', monospace;
     font-size: 16px;
-    line-height: 1.5;
-    margin-bottom: 10px;
+    line-height: 1.6;
+    margin-bottom: 15px;
 }
 
 /* Style the button */
 button {
-    border-radius: 50px;
+    border-radius: 25px;
     background-color: #ffffff;
     border: none;
-    color: 15036e;
-    padding: 15px 32px;
+    color: #15036e;
+    padding: 12px 24px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
     margin: 4px 2px;
     cursor: pointer;
-    transition-duration: 0.4s;
-    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    transition: background-color 0.4s, transform 0.4s;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19);
     font-weight: bold;
-}
-
-.fullscreenButton {
-    border-radius: 50px;
-    position: fixed;
-    right: 0;
-    top: 0;
-}
-
-.showTableButton {
-    border-radius: 50px;
-    position: fixed;
 }
 
 button:hover {
     background-color: #cacaca;
+    transform: translateY(-2px);
 }
 
+.fullscreenButton {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+}
 
+.showTableButton {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
+
+/* Style the table */
 table {
     width: 100%;
     border-collapse: collapse;
-    font-family: monospace;
+    font-family: 'Courier New', monospace;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    font-family: 'Courier New', monospace;
 }
 
 th {
     background-color: #f2f2f2;
-    color: 15036e;
-    font-family: monospace;
-    text-align: left;
-    padding: 8px;
+    color: #15036e;
 }
 
 td {
     border: 1px solid #ddd;
-    font-family: monospace;
-    padding: 8px;
 }
 
 tr:hover {
-    background-color: #8d8c8a;
+    background-color: #dcdcdc;
 }
 
+/* Container styling */
 .container {
     padding: 20px;
-    border: 1px solid #ffffff;
-    border-radius: 5px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
 }
 
+/* Slider container */
 .slidecontainer {
     width: 100%;
 }
 
+/* Slider styling */
 .slider {
     -webkit-appearance: none;
     appearance: none;
     width: 70%;
-    height: 25px;
+    height: 8px;
     background: #636262;
+    border-radius: 4px;
     outline: none;
-    opacity: 0.7;
-    -webkit-transition: .2s;
+    opacity: 0.8;
     transition: opacity .2s;
-    border-radius: 50px;
 }
 
 .slider:hover {
     opacity: 1;
-    /* Viser hele slideren når musen er over */
 }
 
 .slider::-webkit-slider-thumb {
@@ -123,9 +117,10 @@ tr:hover {
     appearance: none;
     width: 25px;
     height: 25px;
-    background: hsl(0, 0%, 100%);
+    background: #ffffff;
     cursor: pointer;
     border-radius: 50%;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
 }
 
 .slider::-moz-range-thumb {
@@ -133,4 +128,6 @@ tr:hover {
     height: 25px;
     background: #15036e;
     cursor: pointer;
+    border-radius: 50%;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
 }

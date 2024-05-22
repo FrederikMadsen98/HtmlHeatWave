@@ -25,7 +25,7 @@
         }
 
         body {
-            background-color:#d3d3d3bd;
+            background-color: #d3d3d3bd;
             font-family: monospace;
         }
     </style>
@@ -42,11 +42,13 @@
                         <p>Udendørs temperature: {{currentTemperature.outDoorTemperature}}°C</p>
                     </div>
                     <div>
-                        <p>Anbefalet temperatur: {{recommendedIndoorTemperature}}</p>
+                        <p>Anbefalet temperatur: {{recommendedIndoorTemperature}}°C</p>
                     </div>
-                    <div class="slidecontainer">
-                        <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
-                        <p>Value: <span id="demo"></span></p>
+                    <div id="app">
+                        <div class="slidecontainer">
+                            <input type="range" min="10" max="30" v-model="sliderValue" class="slider" id="myRange">
+                            <p>Justeret indendørs temperatur: <span id="temp">{{ sliderValue }}°C</span></p>
+                        </div>
                     </div>
                 </div>
             </div>

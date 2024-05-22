@@ -6,7 +6,8 @@ Vue.createApp({
             TempMeasurements: [],
             error: "",
             currentTemperature: null,
-            showTable: false
+            showTable: false,
+            sliderValue: localStorage.getItem('sliderValue') ? parseInt(localStorage.getItem('sliderValue')) : 20,
         }
     },
     created() {
@@ -33,6 +34,11 @@ Vue.createApp({
             return "Ingen specifik anbefaling";
         }
     },
+    watch: {
+        sliderValue(newValue) {
+            localStorage.setItem('sliderValue', newValue);
+        }
+    },
 
     methods: {
         async getPosts() {
@@ -54,14 +60,6 @@ Vue.createApp({
             this.showTable = !this.showTable;
         },
         mounted() {
-            var slider = document.getElementById("myRange");
-            var output = document.getElementById("demo");
-            output.innerHTML = slider.value; // Display the default slider value
-
-            // Update the current slider value (each time you drag the slider handle)
-            slider.oninput = function () {
-                output.innerHTML = this.value;
-            }
         },
     }
 }).mount('#app');
