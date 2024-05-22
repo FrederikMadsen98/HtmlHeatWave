@@ -45,7 +45,7 @@
                         <p>Anbefalet temperatur: {{recommendedIndoorTemperature}}°C</p>
                     </div>
                     <div id="app">
-                        <div class="slidecontainer">
+                        <div  class="slidecontainer">
                             <input type="range" min="10" max="30" v-model="sliderValue" class="slider" id="myRange">
                             <p>Justeret indendørs temperatur: <span id="temp">{{ sliderValue }}°C</span></p>
                         </div>
@@ -56,9 +56,9 @@
 
         <div style="text-align: center;">
             <h3>Vis tidligere målinger</h3>
-            <button v-on:click="toggleTable">Vis Tabel</button>
+            <button id="2" v-on:click="toggleTable">Vis Tabel</button>
 
-            <table style="width: 100%" v-if="showTable">
+            <table id="myTable" style="width: 100%" v-if="showTable">
                 <tr>
                     <th>Id</th>
                     <th>Dato/tid</th>
@@ -85,7 +85,7 @@
                 autoRefreshPage();
             </script>
 
-            <button class="fullscreenButton" onclick="openFullscreen();">Fuldskærm</button>
+            <button id="full" class="fullscreenButton" onclick="openFullscreen();">Fuldskærm</button>
 
             <script>
                 function openFullscreen() {
