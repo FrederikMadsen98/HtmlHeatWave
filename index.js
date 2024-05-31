@@ -10,11 +10,11 @@ Vue.createApp({
             sliderValue: localStorage.getItem('sliderValue') ? parseInt(localStorage.getItem('sliderValue')) : 20,
         }
     },
-    created() {
+    created() { // Kaldes, når instansen af Vue er oprettet
         this.getPosts();
     },
 
-    computed: {
+    computed: { // Beregner en værdi baseret på andre værdier
         recommendedIndoorTemperature() {
             if (this.currentTemperature && this.currentTemperature.outDoorTemperature !== null) {
                 if (this.currentTemperature.outDoorTemperature >= 15 && this.currentTemperature.outDoorTemperature <= 20) {
@@ -34,13 +34,13 @@ Vue.createApp({
             return "Ingen specifik anbefaling";
         }
     },
-    watch: {
+    watch: {     // Overvåger ændringer i specifikke dataegenskaber og udfører en handling, når de ændres
         sliderValue(newValue) {
             localStorage.setItem('sliderValue', newValue);
         }
     },
 
-    methods: {
+    methods: { // Metoder til at udføre handlinger
         async getPosts() {
             try {
                 const response = await axios.get(baseUrl);
@@ -62,4 +62,4 @@ Vue.createApp({
         mounted() {
         },
     }
-}).mount('#app');
+}).mount('#app'); // Mounter appen på elementet med id'et app
